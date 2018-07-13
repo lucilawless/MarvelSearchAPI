@@ -47,6 +47,11 @@ button {
   transition: ease-in-out 1s;
 }
 
+button a {
+  color: black !important;
+  text-decoration: none !important;
+}
+
 button:hover {
   cursor: pointer;
   background-color: #e02121;
@@ -79,4 +84,5 @@ button:hover {
   border: solid 1px black;
   background: transparent;
   border-radius: 1px;
+  margin-bottom: 20px;
 }

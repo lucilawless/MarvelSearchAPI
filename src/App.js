@@ -11,8 +11,8 @@ class App extends Component {
 
   getCharacter = async (e) => {
     e.preventDefault();
-    const characterName = e.target.elements.characterName.value;
-    const api_call = await fetch(`https://gateway.marvel.com:443/v1/public/characters?name=${characterName}&ts=1&apikey=${MY_KEY}&hash=${MY_HASH}`);
+    const firstLetter = e.target.elements.characterName.value;
+    const api_call = await fetch(`https://gateway.marvel.com:443/v1/public/characters?nameStartsWith=${firstLetter}&ts=1&apikey=${MY_KEY}&hash=${MY_HASH}`);
     const data = await api_call.json();
     this.setState({
       characters: data.data.results
@@ -27,6 +27,7 @@ class App extends Component {
         </header>
         <Form getCharacter={this.getCharacter}/>
         <Characters characters={this.state.characters}/>
+
         <footer className="App-footer">
           Data extracted from <a href="https://developer.marvel.com/">Marvel API</a>
         </footer>
