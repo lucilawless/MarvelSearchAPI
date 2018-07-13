@@ -7,8 +7,6 @@ class Form extends React.Component {
         <input className="form-input" type="text" name="characterName" />
         <button>Search</button>
 
-          <div>{this.getCharacter}</div>
-
       </form>
     );
   }
