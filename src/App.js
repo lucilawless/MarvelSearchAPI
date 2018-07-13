@@ -29,6 +29,7 @@ class App extends Component {
           { this.state.characters.map((character)=> {
             return (
               <div>
+                <img src={character.thumbnail.path + '/portrait_small' + '.' + character.thumbnail.extension} />
                 <p key={character.id}>{character.name}</p>
                 <p></p>
               </div>
