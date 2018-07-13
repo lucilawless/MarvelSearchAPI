@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-import { MY_KEY } from './config';
-import { MY_HASH } from './config'
+import { MY_KEY, MY_HASH } from './config';
 import Form from './Components/Form';
+import Characters from './Components/Characters';
 
 class App extends Component {
   state = {
@@ -26,15 +26,10 @@ class App extends Component {
           <h1>Marvel Characters Search</h1>
         </header>
         <Form getCharacter={this.getCharacter}/>
-          { this.state.characters.map((character)=> {
-            return (
-              <div>
-                <img src={character.thumbnail.path + '/portrait_small' + '.' + character.thumbnail.extension} />
-                <p key={character.id}>{character.name}</p>
-                <p></p>
-              </div>
-            )
-          }) }
+        <Characters characters={this.state.characters}/>
+        <footer className="App-footer">
+          Data extracted from <a href="https://developer.marvel.com/">Marvel API</a>
+        </footer>
       </div>
     );
   }
