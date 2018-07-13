@@ -1,0 +1,14 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #222;
+  height: 90px;
+  padding: 20px;
+  color: white;
+}
+
+.form-input {
+  margin: 20px 0 20px 20px;
+}
