@@ -1,5 +1,6 @@
 import React from 'react';
 import { MY_KEY, MY_HASH } from '../config';
+import { Link } from 'react-router-dom';
 
 class Character extends React.Component {
   state = {
@@ -21,10 +22,13 @@ class Character extends React.Component {
     const character = this.state.activeCharacter;
     return (
       <div className="container">
-        <h1 className="character-name">{character.name}</h1>
-        <div className="details-box">
-          <p>{character.description ? character.description : " "}</p>
-        </div>
+        <span className="character-name-h1"><h1>{character.name}</h1></span>
+          <div className="details-box">
+            <p>{character.description ? character.description : " "}</p>
+            <button className="back-button">
+              <Link to={'/'}>Back</Link>
+            </button>
+          </div>
       </div>
     );
   }

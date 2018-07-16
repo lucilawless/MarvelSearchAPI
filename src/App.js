@@ -3,6 +3,7 @@ import './App.css';
 import { MY_KEY, MY_HASH } from './config';
 import Form from './Components/Form';
 import Characters from './Components/Characters';
+import { Link } from 'react-router-dom';
 
 class App extends Component {
   state = {
@@ -19,11 +20,25 @@ class App extends Component {
     });
     console.log(this.state.characters);
   }
+
+  componentDidMount = () => {
+    const json = localStorage.getItem("characters");
+    const characters = JSON.parse(json);
+    this.setState({ characters });
+  }
+
+  componentDidUpdate = () => {
+    const characters = JSON.stringify(this.state.characters);
+    localStorage.setItem("characters", characters);
+  }
+
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <h1>Marvel Characters Search</h1>
+          <h1>
+            <Link to={'/'}>Marvel Characters Search</Link>
+          </h1>
         </header>
         <Form getCharacter={this.getCharacter}/>
         <Characters characters={this.state.characters}/>
