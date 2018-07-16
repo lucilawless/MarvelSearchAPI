@@ -5,6 +5,10 @@ html {
 
 body {
   background-color: #f7f7ed;
+  background-image: url('http://res.cloudinary.com/di7m4tijz/image/upload/v1531741231/221395_cohjf6.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
   margin: 0px;
   padding: 0px;
 }
@@ -13,10 +17,15 @@ body {
 }
 
 .App-header {
+  background-image: url('http://res.cloudinary.com/di7m4tijz/image/upload/v1531741263/deadpool___transparent_by_asthonx1-da5ybsh_qaikds.png');
+  background-repeat: no-repeat;
+  background-size: contain;
   background-color: #222;
   height: 90px;
+  width: 80%;
   padding: 20px;
   color: white;
+  border-radius: 0 0 70px 0;
 }
 
 .App-footer {
@@ -35,10 +44,18 @@ body {
 .App-footer a {
   color: #e02121;
 }
+
 .form-input {
-  margin: 20px 0 60px 20px;
+  margin: 20px 0 20px 20px;
   background: transparent;
   border: 1px solid black;
+}
+
+form {
+  background-color: white;
+  margin-top: 0px;
+  width: 70%;
+  border-radius: 0 0 70px 0;
 }
 
 button {
@@ -58,16 +75,22 @@ button:hover {
 }
 
 .characters-box {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: 0px;
+  display: inline-flex;
   background: #fffefc;
-  padding-bottom: 1px;
-  box-shadow: -1px 2px 34px 2px rgba(0,0,0,0.75);
+  box-shadow: -1px 2px 34px 20px rgba(0,0,0,0.75);
   overflow: hidden;
   border: 1px solid black;
   outline: 20px solid #fffefc;
+  min-width: 250px;
+  min-height: 250px;
 }
 
 .characters-box-img {
-  width: 100%;
+  min-width: 250px;
+  min-height: 250px;
 }
 
 .character-text {
@@ -85,4 +108,17 @@ button:hover {
   background: transparent;
   border-radius: 1px;
   margin-bottom: 20px;
+}
+
+.details-box {
+  margin: 2rem;
+  padding: 0px;
+  display: inline-flex;
+  background: #fffefc;
+  box-shadow: -1px 2px 34px 20px rgba(0,0,0,0.75);
+  overflow: hidden;
+  border: 1px solid black;
+  outline: 20px solid #fffefc;
+  min-width: 50px;
+  min-height: 50px;
 }

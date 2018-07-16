@@ -5,7 +5,7 @@ class Characters extends React.Component {
   render() {
     return (
       <div className="container">
-        <div className="row">
+        <div className="row" style={{ marginBottom:"5rem", marginTop:"2rem"}}>
           { this.props.characters.map((character)=> {
             return (
               <div key={character.title} className="col-sm-4" style={{ marginBottom:"2rem" }}>
@@ -17,13 +17,15 @@ class Characters extends React.Component {
                       alt={character.name}
                       />
                     <div className="character-text">
-                      <h5 className="character-name">{character.name}</h5>
-                      <p>
-                        { character.description.length < 207 ? `${character.description}` : `${character.description.substring(0, 207)}...` }
-                      </p>
+                      <h5 className="character-name">
+                        {character.name.length < 15 ? `${character.name}` : `${character.name.substring(0, 15)}...`}
+                      </h5>
                     </div>
                     <button className="character-button">
-                      <Link to={{ pathname: `/character/${character.characterId}` }}>Details</Link>
+                      <Link to={{
+                        pathname: `/character/${character.id}`,
+                        state: { character: character.name }
+                      }}>Details</Link>
                     </button>
                   </div>
                 </div>

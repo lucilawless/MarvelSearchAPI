@@ -29,7 +29,7 @@ class App extends Component {
         <Characters characters={this.state.characters}/>
 
         <footer className="App-footer">
-          Data extracted from <a href="https://developer.marvel.com/">Marvel API</a>
+          Data provided by <a href="https://developer.marvel.com/">Marvel API</a>
         </footer>
       </div>
     );
