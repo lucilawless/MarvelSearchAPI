@@ -20,7 +20,7 @@ class App extends Component {
     if(data.data === undefined){
       this.setState({
         characters: [],
-        error: "Please type a character"
+        error: "Please type a name or part of it."
       });
       return;
     }
@@ -39,19 +39,22 @@ class App extends Component {
     }
   }
 
-  // componentDidMount = () => {
-  //   const json = localStorage.getItem("characters");
-  //   const characters = JSON.parse(json);
-  //   this.setState({ characters });
-  // }
-  //
-  // componentDidUpdate = () => {
-  //   const characters = JSON.stringify(this.state.characters);
-  //   localStorage.setItem("characters", characters);
-  // }
+  componentDidMount = () => {
+    const json = localStorage.getItem("characters");
+    const characters = JSON.parse(json);
+    this.setState({ characters });
+  }
+
+  componentDidUpdate = () => {
+    const characters = JSON.stringify(this.state.characters);
+    localStorage.setItem("characters", characters);
+  }
 
  refreshPage = () => {
    window.location.reload();
+   this.setState({
+     characters: []
+   });
  }
 
   render() {
