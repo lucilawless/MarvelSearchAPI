@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css?family=Marvel');
+
 html {
   position: relative;
   min-height: 100%;
@@ -11,9 +14,11 @@ body {
   background-attachment: fixed;
   margin: 0px;
   padding: 0px;
+  font-family: 'Marvel', sans-serif;
 }
 .App {
   text-align: center;
+  font-family: 'Marvel', sans-serif;
 }
 
 .App-header {
@@ -24,8 +29,12 @@ body {
   height: 90px;
   width: 80%;
   padding: 20px;
-  color: white;
+  color: #fff;
   border-radius: 0 0 70px 0;
+}
+
+.App-header h1{
+  font-size: 50px;
 }
 
 h1 a {
@@ -59,6 +68,7 @@ h1 a:hover {
   margin: 20px 0 20px 20px;
   background: transparent;
   border: 1px solid black;
+  width: 30%;
 }
 
 form {
@@ -66,6 +76,10 @@ form {
   margin-top: 0px;
   width: 70%;
   border-radius: 0 0 70px 0;
+}
+
+form button {
+  border-left: 0px;
 }
 
 button {
@@ -85,9 +99,13 @@ button:hover {
 }
 
 .back-button {
-  border-top: 0px;
-  border-bottom: 0px;
-  border-right: 0px;
+  border: 1px solid black;
+  padding: 10px;
+  float: right;
+  background-color: #fff;
+  margin-top: 0%;
+  font-size: 20px;
+  width: 80px;
 }
 
 .characters-box {
@@ -109,10 +127,6 @@ button:hover {
   min-height: 250px;
 }
 
-.character-text {
-  text-align: justify;
-}
-
 .character-name {
   color: #e02121;
   text-transform: uppercase;
@@ -127,10 +141,10 @@ span.character-name-h1 {
   border-radius: 0 0 70px 0;
   padding: 10px 10px;
   text-align: center;
-  height: 70px;
-  width: 100%;
+  min-height: 70px;
+  min-width: 100%;
   float:left;
-
+  margin-left: -200px;
 }
 
 .character-button {
@@ -141,14 +155,15 @@ span.character-name-h1 {
 }
 
 .details-box {
-  margin: 2rem;
-  padding: 0px;
+  margin: 3rem;
+  padding: 20px;
   display: inline-flex;
   background: #fffefc;
-  box-shadow: -1px 2px 34px 20px rgba(0,0,0,0.75);
+  box-shadow: -1px 2px 34px 30px rgba(0,0,0,0.75);
   overflow: hidden;
   border: 1px solid black;
   outline: 20px solid #fffefc;
   min-width: 50px;
   min-height: 50px;
+  font-size: 25px;
 }

@@ -6,7 +6,7 @@ class Characters extends React.Component {
     return (
       <div className="container">
         <div className="row" style={{ marginBottom:"5rem", marginTop:"2rem"}}>
-          { this.props.characters.map((character)=> {
+          { this.props.characters.map((character) => {
             return (
               <div key={character.title} className="col-sm-4" style={{ marginBottom:"2rem" }}>
                 <div className="characters-box">
@@ -16,7 +16,7 @@ class Characters extends React.Component {
                       src={character.thumbnail.path + '/standard_large' + '.' + character.thumbnail.extension}
                       alt={character.name}
                       />
-                    <div className="character-text">
+                    <div>
                       <h5 className="character-name">
                         {character.name.length < 15 ? `${character.name}` : `${character.name.substring(0, 15)}...`}
                       </h5>
