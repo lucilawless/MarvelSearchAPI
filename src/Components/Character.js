@@ -6,7 +6,8 @@ class Character extends React.Component {
   state = {
     activeCharacter: [],
     comics: {},
-    image: {}
+    image: {},
+    comicsUrl: [{}]
   }
 
   componentDidMount = async () => {
@@ -16,37 +17,41 @@ class Character extends React.Component {
     this.setState({
       activeCharacter: response.data.results[0],
       comics: response.data.results[0].comics,
-      image: response.data.results[0].thumbnail
+      image: response.data.results[0].thumbnail,
+      comicsUrl: response.data.results[0].urls[2]
     });
-    console.log(this.state.activeCharacter);
-    console.log(this.state.activeCharacter.comics.available);
-    console.log(this.state.activeCharacter.comics.items);
-    console.log(this.state.activeCharacter.thumbnail.path + '.' + this.state.activeCharacter.thumbnail.extension);
   }
 
   render() {
     const character = this.state.activeCharacter;
     const comicsCount = this.state.comics;
     const image = this.state.image;
+    const comicsLink = this.state.comicsUrl;
     return (
-      <div className="container">
-        <span className="character-name-h1"><h1>{character.name}</h1></span>
-        <div>
-          { character.description !== "" ?
-            <div className="details-box">
-              <p>{character.description}</p>
-            </div> : <div className="details-box">No details provided for this character yet.</div>
-          }
+      <div>
+        <div className="container">
+          <span className="character-name-h1"><h1>{character.name}</h1></span>
+            <div className="characters-box">
+              <img className="characters-box-img" src={image.path + '/standard_large' + '.' + image.extension} alt={character.name}/>
+            </div>
+            <button className="back-button">
+              <Link to={'/'}>Back</Link>
+            </button>
+            { character.description !== "" ?
+              <div className="details-box">
+                <p>{character.description}</p>
+              </div> : <div className="details-box">No details provided for this character yet.</div>
+            }
+            { comicsCount.available && comicsLink.url !== "" ?
+              <div className="comic-info">
+                <p>Available in {comicsCount.available} comics.</p>
+                <p><a href={comicsLink.url}>See all titles here</a></p>
+              </div> : ""
+            }
         </div>
-        <button className="back-button">
-          <Link to={'/'}>Back</Link>
-        </button>
-        <div className="details-box">
-          Appearance in comics: {comicsCount.available}
-        </div>
-        <div className="details-box">
-          <img src={image.path + '/standard_large' + '.' + image.extension} />
-        </div>
+        <footer className="App-footer">
+          Data provided by <a href="https://developer.marvel.com/">Marvel API</a>
+        </footer>
       </div>
     );
   }

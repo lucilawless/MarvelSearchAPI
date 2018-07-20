@@ -7,7 +7,8 @@ import { Link } from 'react-router-dom';
 
 class App extends Component {
   state = {
-    characters: []
+    characters: [],
+    error: undefined
   }
 
   getCharacter = async (e) => {
@@ -15,24 +16,32 @@ class App extends Component {
     const firstLetter = e.target.elements.characterName.value;
     const api_call = await fetch(`https://gateway.marvel.com:443/v1/public/characters?nameStartsWith=${firstLetter}&ts=1&apikey=${MY_KEY}&hash=${MY_HASH}`);
     const data = await api_call.json();
-    if (firstLetter !== "") {
+    if (firstLetter) {
       this.setState({
-        characters: data.data.results
+        characters: data.data.results,
+        error: undefined
       });
+   } else {
+     this.setState({
+       characters: [],
+       error: "Please, type a letter or a name."
+     });
    }
    console.log(this.state.characters);
+   console.log(this.state.error);
   }
 
-    // componentDidMount = () => {
-    //   const json = localStorage.getItem("characters");
-    //   const characters = JSON.parse(json);
-    //   this.setState({ characters });
-    // }
-    //
-    // componentDidUpdate = () => {
-    //   const characters = JSON.stringify(this.state.characters);
-    //   localStorage.setItem("characters", characters);
-    // }
+  // componentDidMount = () => {
+  //   const json = localStorage.getItem("characters");
+  //   const characters = JSON.parse(json);
+  //   this.setState({ characters });
+  // }
+  //
+  // componentDidUpdate = () => {
+  //   const characters = JSON.stringify(this.state.characters);
+  //   localStorage.setItem("characters", characters);
+  // }
+
  refreshPage = () => {
    window.location.reload();
  }
@@ -45,7 +54,7 @@ class App extends Component {
             <Link to={'/'} onClick={this.refreshPage}>Marvel Characters Search</Link>
           </h1>
         </header>
-        <Form getCharacter={this.getCharacter} />
+        <Form getCharacter={this.getCharacter} error={this.state.error} />
         <Characters characters={this.state.characters} />
         <footer className="App-footer">
           Data provided by <a href="https://developer.marvel.com/">Marvel API</a>

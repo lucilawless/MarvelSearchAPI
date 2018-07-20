@@ -47,17 +47,25 @@ h1 a:hover {
   color: #fff;
 }
 
+a {
+  color: #e02121;
+}
+
+a:hover {
+  color: #e02121;
+}
+
 .App-footer {
   clear: both;
   background-color: #222;
-  padding: 10px 0;
+  padding: 10px;
   text-align: center;
   height: 30px;
   width: 100%;
   color: white;
   position: absolute;
   bottom: 0;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .App-footer a {
@@ -101,20 +109,23 @@ button:hover {
 .back-button {
   border: 1px solid black;
   padding: 10px;
-  float: right;
   background-color: #fff;
-  margin-top: 0%;
   font-size: 20px;
-  width: 80px;
+  width: 100px;
+  position: absolute;
+  float: left;
+  margin-left: -175px;
+  margin-top: 370px;
+
 }
 
 .characters-box {
-  margin-top: 2rem;
+  margin-top: 3rem;
   margin-bottom: 2rem;
   padding: 0px;
-  display: inline-flex;
+  display: inline-block;
   background: #fffefc;
-  box-shadow: -1px 2px 34px 20px rgba(0,0,0,0.75);
+  box-shadow: -1px 2px 34px 30px rgba(0,0,0,0.75);
   overflow: hidden;
   border: 1px solid black;
   outline: 20px solid #fffefc;
@@ -155,15 +166,33 @@ span.character-name-h1 {
 }
 
 .details-box {
-  margin: 3rem;
+  margin: 80px;
   padding: 20px;
-  display: inline-flex;
+  display: inline-block;
   background: #fffefc;
   box-shadow: -1px 2px 34px 30px rgba(0,0,0,0.75);
   overflow: hidden;
   border: 1px solid black;
   outline: 20px solid #fffefc;
-  min-width: 50px;
-  min-height: 50px;
+  min-width: 10px;
+  min-height: 10px;
   font-size: 25px;
+  position: absolute;
+}
+
+.comic-info {
+  margin-top: 40px;
+  margin-left: 331px;;
+  padding: 20px;
+  display: block;
+  position: absolute;
+  background: #fffefc;
+  box-shadow: -1px 2px 34px 31px rgba(0,0,0,0.75);
+  overflow: hidden;
+  border: 1px solid black;
+  outline: 20px solid #fffefc;
+  min-width: 10px;
+  min-height: 10px;
+  font-size: 25px;
+  text-align: center;
 }
