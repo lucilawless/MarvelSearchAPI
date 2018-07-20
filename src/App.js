@@ -16,19 +16,27 @@ class App extends Component {
     const firstLetter = e.target.elements.characterName.value;
     const api_call = await fetch(`https://gateway.marvel.com:443/v1/public/characters?nameStartsWith=${firstLetter}&ts=1&apikey=${MY_KEY}&hash=${MY_HASH}`);
     const data = await api_call.json();
+
+    if(data.data === undefined){
+      this.setState({
+        characters: [],
+        error: "Please type a character"
+      });
+      return;
+    }
+    if(data.data.results.length === 0){
+      this.setState({
+        characters: [],
+        error: "Not found!"
+      });
+      return;
+    }
     if (firstLetter) {
       this.setState({
         characters: data.data.results,
         error: undefined
       });
-   } else {
-     this.setState({
-       characters: [],
-       error: "Please, type a letter or a name."
-     });
-   }
-   console.log(this.state.characters);
-   console.log(this.state.error);
+    }
   }
 
   // componentDidMount = () => {
