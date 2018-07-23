@@ -18,7 +18,7 @@ class Character extends React.Component {
       activeCharacter: response.data.results[0],
       comics: response.data.results[0].comics,
       image: response.data.results[0].thumbnail,
-      comicsUrl: response.data.results[0].urls[2]
+      comicsUrl: response.data.results[0].urls.pop()
     });
   }
 
@@ -42,12 +42,13 @@ class Character extends React.Component {
                 <p>{character.description}</p>
               </div> : <div className="details-box">No details provided for this character yet.</div>
             }
+
             { comicsCount.available && comicsLink.url !== "" ?
-              <div className="comic-info">
-                <p>Available in {comicsCount.available} comics.</p>
-                <p><a href={comicsLink.url}>See all titles here</a></p>
-              </div> : ""
-            }
+                 <div className="comic-info">
+                   <p>Available in {comicsCount.available} comics.</p>
+                   <p><a href={comicsLink.url}>See all titles here</a></p>
+                 </div> : ""
+             }
         </div>
         <footer className="App-footer">
           Data provided by <a href="https://developer.marvel.com/">Marvel API</a>
