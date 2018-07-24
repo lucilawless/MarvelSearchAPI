@@ -22,7 +22,7 @@ body {
 }
 
 .App-header {
-  background-image: url('http://res.cloudinary.com/di7m4tijz/image/upload/v1531741263/deadpool___transparent_by_asthonx1-da5ybsh_qaikds.png');
+  background-image: url('https://res.cloudinary.com/di7m4tijz/image/upload/v1531741263/deadpool___transparent_by_asthonx1-da5ybsh_qaikds.png');
   background-repeat: no-repeat;
   background-size: contain;
   background-color: #222;
@@ -182,16 +182,15 @@ span.character-name-h1 {
 
 .comic-info {
   margin-top: 40px;
-  margin-left: 331px;;
-  padding: 20px;
-  display: block;
-  position: absolute;
+  margin-left: 331px;
+  padding: 10px;
+  display: inline-block;
   background: #fffefc;
   box-shadow: -1px 2px 34px 31px rgba(0,0,0,0.75);
   overflow: hidden;
   border: 1px solid black;
   outline: 20px solid #fffefc;
-  min-width: 10px;
+  width: 50%;
   min-height: 10px;
   font-size: 25px;
   text-align: center;

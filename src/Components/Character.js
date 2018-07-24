@@ -7,7 +7,7 @@ class Character extends React.Component {
     activeCharacter: [],
     comics: {},
     image: {},
-    comicsUrl: [{}]
+    comicsUrl: {}
   }
 
   componentDidMount = async () => {
@@ -42,7 +42,6 @@ class Character extends React.Component {
                 <p>{character.description}</p>
               </div> : <div className="details-box">No details provided for this character yet.</div>
             }
-
             { comicsCount.available && comicsLink.url !== "" ?
                  <div className="comic-info">
                    <p>Available in {comicsCount.available} comics.</p>
@@ -50,7 +49,7 @@ class Character extends React.Component {
                  </div> : ""
              }
         </div>
-        <footer className="App-footer">
+        <footer className="App-footer" style={{ position: "fixed" }}>
           Data provided by <a href="https://developer.marvel.com/">Marvel API</a>
         </footer>
       </div>

@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
-import { MY_KEY, MY_HASH } from './config';
 import Form from './Components/Form';
 import Characters from './Components/Characters';
 import { Link } from 'react-router-dom';
+
+const MY_KEY = process.env.REACT_APP_MY_KEY;
+const MY_HASH = process.env.REACT_APP_MY_HASH;
 
 class App extends Component {
   state = {
