@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+const MY_KEY = process.env.REACT_APP_MY_KEY;
+const MY_HASH = process.env.REACT_APP_MY_HASH;
+
 class Character extends React.Component {
-  const MY_KEY = process.env.REACT_APP_MY_KEY;
-  const MY_HASH = process.env.REACT_APP_MY_HASH;
 
   state = {
     activeCharacter: [],
