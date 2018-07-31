@@ -6,7 +6,7 @@ class Characters extends React.Component {
     return (
       <div className="container">
         <div className="row" style={{ marginBottom:"5rem", marginTop:"2rem"}}>
-          { this.props.characters.map((character) => {
+          { this.state.characters.map((character) => {
             return (
               <div key={character.title} className="col-sm-4" style={{ marginBottom:"2rem" }}>
                 <div className="characters-box">
