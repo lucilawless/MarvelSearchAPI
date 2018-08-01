@@ -43,7 +43,7 @@ class App extends Component {
 
   componentDidMount = () => {
     const json = localStorage.getItem("characters");
-    if (json !== undefined && json.length > 0) {
+    if (json !== null) {
       const characters = JSON.parse(json);
       this.setState({ characters });
     }
