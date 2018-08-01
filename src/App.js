@@ -41,16 +41,18 @@ class App extends Component {
     }
   }
 
-  // componentDidMount = () => {
-  //   const json = localStorage.getItem("characters");
-  //   const characters = JSON.parse(json);
-  //   this.setState({ characters });
-  // }
-  //
-  // componentDidUpdate = () => {
-  //   const characters = JSON.stringify(this.state.characters);
-  //   localStorage.setItem("characters", characters);
-  // }
+  componentDidMount = () => {
+    const json = localStorage.getItem("characters");
+    if (json !== undefined && json.length > 0) {
+      const characters = JSON.parse(json);
+      this.setState({ characters });
+    }
+  }
+
+  componentDidUpdate = () => {
+    const characters = JSON.stringify(this.state.characters);
+    localStorage.setItem("characters", characters);
+  }
 
  refreshPage = () => {
    window.location.reload();
