@@ -3,9 +3,9 @@ import './App.css';
 import Form from './Components/Form';
 import Characters from './Components/Characters';
 import { Link } from 'react-router-dom';
-
-const MY_KEY = process.env.REACT_APP_MY_KEY;
-const MY_HASH = process.env.REACT_APP_MY_HASH;
+import { MY_KEY, MY_HASH } from './config';
+// const MY_KEY = process.env.REACT_APP_MY_KEY;
+// const MY_HASH = process.env.REACT_APP_MY_HASH;
 
 class App extends Component {
   state = {
@@ -66,7 +66,7 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <h1>
-            <Link to={'/'} onClick={this.refreshPage}>Marvel Characters Search</Link>
+            <Link to={'/'} title="Refresh" onClick={this.refreshPage}>Marvel Characters Search</Link>
           </h1>
         </header>
         <Form getCharacter={this.getCharacter} error={this.state.error} />

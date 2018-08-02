@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
-const MY_KEY = process.env.REACT_APP_MY_KEY;
-const MY_HASH = process.env.REACT_APP_MY_HASH;
+import { MY_KEY, MY_HASH } from './../config';
+// const MY_KEY = process.env.REACT_APP_MY_KEY;
+// const MY_HASH = process.env.REACT_APP_MY_HASH;
 
 class Character extends React.Component {
 
@@ -32,8 +32,8 @@ class Character extends React.Component {
     const comicsLink = this.state.comicsUrl;
     return (
       <div>
+        <span className="character-name-h1"><h1>{character.name}</h1></span>
         <div className="container">
-          <span className="character-name-h1"><h1>{character.name}</h1></span>
             <div className="characters-box">
               <img className="characters-box-img" src={image.path + '/standard_large' + '.' + image.extension} alt={character.name}/>
             </div>

@@ -12,6 +12,8 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  width: 100%;
+  height: auto;
   margin: 0px;
   padding: 0px;
   font-family: 'Marvel', sans-serif;
@@ -34,7 +36,8 @@ body {
 }
 
 .App-header h1{
-  font-size: 50px;
+  font-size: 4vw;
+  display: inline-block;
 }
 
 h1 a {
@@ -153,9 +156,8 @@ span.character-name-h1 {
   padding: 10px 10px;
   text-align: center;
   min-height: 70px;
-  min-width: 100%;
-  float:left;
-  margin-left: -200px;
+  min-width: 80%;
+  display: inline-block;
 }
 
 .character-button {
