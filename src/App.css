@@ -38,6 +38,7 @@ body {
 .App-header h1{
   font-size: 4vw;
   display: inline-block;
+  padding-bottom: 20px;
 }
 
 h1 a {
