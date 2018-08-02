@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { MY_KEY, MY_HASH } from './../config';
-// const MY_KEY = process.env.REACT_APP_MY_KEY;
-// const MY_HASH = process.env.REACT_APP_MY_HASH;
+
+const MY_KEY = process.env.REACT_APP_MY_KEY;
+const MY_HASH = process.env.REACT_APP_MY_HASH;
 
 class Character extends React.Component {
 
